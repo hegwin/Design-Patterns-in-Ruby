@@ -5,3 +5,5 @@
 2. [Adapter 适配器](Adapter)
 
 3. [Proxy 代理](Proxy)
+
+4. [Decorator 装饰器](Decorator)
