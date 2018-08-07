@@ -1,9 +1,12 @@
 # Design Patterns in Ruby
 
-1. [Command 命令模式](Command)
+1. [Observer 观察器](Observer)
 
-2. [Adapter 适配器](Adapter)
+2. [Command 命令模式](Command)
 
-3. [Proxy 代理](Proxy)
+3. [Adapter 适配器](Adapter)
 
-4. [Decorator 装饰器](Decorator)
+4. [Proxy 代理](Proxy)
+
+5. [Decorator 装饰器](Decorator)
+
