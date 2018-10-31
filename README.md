@@ -11,3 +11,5 @@
 5. [Decorator 装饰器](Decorator)
 
 6. [Builder 生成器](Builder)
+
+7. [Interpreter 解释器](Interpreter)
