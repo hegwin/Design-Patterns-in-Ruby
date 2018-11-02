@@ -1,9 +1,5 @@
 require 'find'
 
-PATH = ARGV[0]
-
-raise RuntimeError, 'Path not specified!' if PATH.nil?
-
 class Expression; end
 
 class All < Expression
@@ -65,7 +61,7 @@ end
 class Writable < Expression
   def evaluate(dir)
     results = []
-    
+
     Find.find(dir) do |p|
       next unless Find.file?(p)
       results << p if File.writable(p)
@@ -112,36 +108,3 @@ class Or < Expression
     @expressions.map {|expression| expression.evaluate(dir) }.reduce(:+).sort.uniq
   end
 end
-
-def all
-  All.new
-end
-
-def bigger_than(size)
-  BigFile.new(size)
-end
-
-def name(pattern)
-  FileName.new(pattern)
-end
-
-def except(expression)
-  Not.new(expression)
-end
-
-def writable
-  Writable.new
-end
-
-class Expression
-  def |(other)
-    Or.new([self, other])
-  end
-
-  def &(other)
-    And.new([self, other])
-  end
-end
-
-big_pdf_files = bigger_than(2000) & name('*.pdf')
-p big_pdf_files.evaluate(PATH)
