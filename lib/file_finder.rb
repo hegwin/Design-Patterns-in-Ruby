@@ -63,8 +63,8 @@ class Writable < Expression
     results = []
 
     Find.find(dir) do |p|
-      next unless Find.file?(p)
-      results << p if File.writable(p)
+      next unless File.file?(p)
+      results << p if File.writable?(p)
     end
 
     results
