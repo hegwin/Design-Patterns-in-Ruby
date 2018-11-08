@@ -6,7 +6,7 @@ raise RuntimeError, 'Path not specified!' if PATH.nil?
 
 class Parser
   def initialize(text)
-    @tokens = text.scan /\(\)|[\w\.\*]+/
+    @tokens = text.scan /\(|\)|[\w\.\*]+/
   end
 
   def expression
