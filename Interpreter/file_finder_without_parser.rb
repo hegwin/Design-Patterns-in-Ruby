@@ -1,8 +1,8 @@
 require_relative '../lib/file_finder'
 
-PATH = ARGV[0]
+# PATH = ARGV[0]
 
-raise RuntimeError, 'Path not specified!' if PATH.nil?
+# raise RuntimeError, 'Path not specified!' if PATH.nil?
 
 def all
   All.new
@@ -34,5 +34,5 @@ class Expression
   end
 end
 
-big_pdf_files = bigger_than(2000) & name('*.pdf')
-p big_pdf_files.evaluate(PATH)
+# big_pdf_files = bigger_than(2000) & name('*.pdf')
+# p big_pdf_files.evaluate(PATH)
